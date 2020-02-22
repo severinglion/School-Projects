@@ -1,0 +1,8 @@
+<Doc>
+    <Text align="center">
+        This is some filler.
+    </Text>
+    <h1>
+        This text should be bold, and filtered out.
+    </h1>
+</Doc>

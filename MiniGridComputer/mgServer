@@ -1,0 +1,97 @@
+#!/bin/sh
+
+#set default permissions
+umask 077
+
+# set up some globals
+FIFO_S="/tmp/server-${USER}-fifo"
+FIFO_P="/tmp/processor-${USER}-fifo"
+soc_addr="/tmp/server-${USER}-sock"
+input=""
+cur_proc='0'
+sock_pid=""
+
+# calculate default number of processors
+if [ $(uname -o) = 'GNU/Linux' ]; then
+	cpu_count=`nproc`
+else
+	cpu_count=`grep -c processor /proc/cpuinfo`
+fi 
+cpu_sequence=$( seq 0 $(( $cpu_count - 1 )) )
+
+###Cleanup function to remove all pipes from the OS
+cleanup() {
+	echo "mg server cleaning up"
+	kill  -9 sock_pid > /dev/null 2>&1
+    rm -f $FIFO_S $soc_addr # do not recieve any more input by ensuring the input 'files' are destroyed
+	proc_pid=$(pgrep ${USER} | pgrep processor.sh) # get the pids of processor programs
+	kill -9 $proc_pid > /dev/null 2>&1 # raise SIGINT for processes and ignore output
+	# ensure that all processor fifo's are removed 
+    for i in $cpu_sequence
+    do
+		rm -f $FIFO_P$i 
+    done
+}
+
+# set cleanup on exit
+trap cleanup PIPE HUP TERM INT EXIT
+
+# process command line options (so that number of processors can be overridden)
+PRINT_HELP="NO"
+for arg in "$@"
+do
+	case "${arg}" in
+	-[h?]*)
+		PRINT_HELP="YES"
+		;;
+	-*)
+		echo "Unknown option '${arg}'" >&2
+        exit -1
+		;;
+	*)
+		echo "Unknown argument '${arg}'" >&2
+        exit -1
+		;;
+	esac
+done
+
+
+# if help was requested, print it to stderr and exit
+if [ X"$PRINT_HELP" = X"YES" ]
+then
+    echo "$0 <options>" >&2
+    echo "Option:" >&2
+    echo "-h    : help - this is it" >&2
+    echo "-n<N> : set the number of processing units to <N>" >&2
+    exit 1
+fi
+
+# the fifo that will read the input sent to the user
+if [ ! -p $FIFO_S ]; then
+    mkfifo $FIFO_S
+fi
+echo "Starting up ${cpu_count} processing units"
+# set up the processor programs
+for i in $cpu_sequence
+do
+	./processor.sh $i &
+done
+
+# run the socket interface daemon
+./mgSocketInterface $FIFO_S > test/socketInterface.output 2>&1 &
+sock_pid=$!
+
+# main server loop
+echo "Ready for processing : place jobs onto ${FIFO_S}"
+while read input  > /dev/null 2>&1 < $FIFO_S
+do
+    if [ "$input" != '' ]; then
+        # check for shutdown conditions
+        if [ "$input" = 'shutdown' ]; then
+            break;
+        fi
+		echo ${input} > $FIFO_P$cur_proc
+		cur_proc=$(expr $(expr $cur_proc + 1) % $cpu_count)
+    fi
+
+done

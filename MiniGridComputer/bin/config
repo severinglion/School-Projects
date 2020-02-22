@@ -1,0 +1,9 @@
+#!/bin/sh
+
+echo "updating permissions"
+chmod +x mgServer mgSocketInterface mgSubmitJob processor.sh \
+ testHarness.sh timedCountdown 
+
+echo "creating test dir for test harness"
+mkdir test > /dev/null 2>&1
+echo "config complete"

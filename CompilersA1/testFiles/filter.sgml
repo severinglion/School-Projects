@@ -1,0 +1,12 @@
+<DOC>
+<TEXT> this should be visible
+<NOPE>Invisible</NOPE>
+<DATE> date-should-be-visible </DATE>
+</TEXT>
+<FILTERED>
+this should not be visible
+<TEXT>
+This should also not be visible
+</TEXT>
+</FILTERED>
+</DOC>

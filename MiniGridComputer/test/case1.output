@@ -1,0 +1,13 @@
+total 60
+drwxrwxrwx 1 jbunt jbunt  4096 Nov 27 15:07 .
+drwxrwxrwx 1 jbunt jbunt  4096 Nov 27 15:07 ..
+-rwxrwxrwx 1 jbunt jbunt  4406 Nov 27 14:49 README.md
+drwxrwxrwx 1 jbunt jbunt  4096 Nov 27 13:05 bin
+-rwxrwxrwx 1 jbunt jbunt 30720 Nov 27 15:07 jbunt-a4.tar
+-rwxrwxrwx 1 jbunt jbunt  2269 Nov 27 15:01 mgServer
+-rwxrwxrwx 1 jbunt jbunt  2087 Nov 27 14:01 mgSocketInterface
+-rwxrwxrwx 1 jbunt jbunt  1512 Nov 26 10:56 mgSubmitJob
+-rwxrwxrwx 1 jbunt jbunt  1103 Nov 27 14:06 processor.sh
+drwxrwxrwx 1 jbunt jbunt  4096 Nov 27 15:07 test
+-rwxrwxrwx 1 jbunt jbunt  1980 Nov 27 14:51 testHarness.sh
+-rwxrwxrwx 1 jbunt jbunt   292 Nov 26 21:31 timedCountdown
