@@ -10,7 +10,7 @@
 This assignment required me to implement a machine learning algorithm
 to generate decision trees from an example set of inputs. The generated
 decision tree can then make a decision given any input within the
-problem space. The program program parses a scheme file that defines the
+problem space. The program parses a scheme file that defines the
 problem space, and a data file to define the example set. Once the needed
 data is parsed, it begins generating the decision tree. Intermediate values
 are printed to the console, to trace execution of the algorithm. Once the
