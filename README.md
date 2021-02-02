@@ -2,34 +2,9 @@
 
 A collection of notable school projects I have worked on. Please note that this is not an exhuastive list,
 as over the last several years I have completed many projects. Instead of dumping all of them into a portfolio
-I have opted to pick a few of my favourites. I do not guarantee their usefullness, especially from assignments
-from my first two years, because they were intended to make me learn a specific aspect of programming or theory.
-Each project is unique enough where I believe my skills are showcased.  
+I have opted to pick a few of my favourites. I do not guarantee their usefullness because they were intended to make me
+learn a specific aspect of programming or theory. Each project is unique enough where I believe my skills are showcased.  
 
-Here is a list of CS courses I have completed or am currently enrolled along with descriptions of the course:
-
-- **Introduction to Programming**: *This course taught basic C programming skills.*
-- **Intermediate Programming**: *This course taught more advanced C programming skills.*
-- **Discrete Structures in Computing I/II**: *These courses taught foundational discrete mathematics and graph theory.*
-- **Structure and Application of Microcomputers**: *This course taught foundation of assembly language for Intel 8080 chips*
-- **Data Structures**: *This courese taught a variety of data structures including but not limited to: lists, tables and trees*
-- **Object Oriented Programming**: *This course taught foundational OOP and Java*
-- **Software System Development and Integration**: *This course taught language and technology integration to solve more complex problems, as well as time management for larger scale projects.*
-- **User Interface Design**: *This course taught the basics of UI desing principles, user and task analysis, usability testing and prototyping.*
-- **Analysis and Design of Computer Algorithms**: *This course laid the foundation for different types of algorithmes and their complexity in big O notation.*
-- **Operating Systems**: *This course described what an operating system is and what it should do focusing more on theoretical aspects and algorithms associated with an OS.*
-- **Computer Networks**: *This course laid foundational knowledge of networking including IPC, the OSI model, and varying protocols used in networking.*
-- **Theory of Computation**: *This course taught regular languages, context free languages, turing recognizable languabes and non-turing recognizable languages as well as NP completeness.*
-- **System Analysis and Design**: *This course taught the foundation for designing a system from idea to requirement list, to low fidelity model to high fidelity model.*
-- **Software Engineering**: *This course taught scrum methodologies as well as various design patterns like MVC and Factories. This course also had a large practical componenet requiring each assigned group to fork an open source project, model it with UML and develop it as the group saw fit using scrum methodologies.*
-- **Introduction to Cryptography**: *This course taught number theory and cryptographic techniques.*
-- **Computers and Society**: *This course focused on teaching what some of the various ongoing research is happening in the field of Computer Science at a high level.*
-- **Systems Programming**: *This course taught indepth about how systems are programmed including supporting multiple platforms, various IPC methods suppored by different OS's, creating systems that can be easily extended or modified using shared/static libraries and task automation using scripting.*
-- **Computer Security Foundation**: *This course covered foundational issues regarding computer and network security. It covered various types of malware, attack vectors such as buffer overflow and guid exploits, openSSL, and firewall and IDS tools like Snort and IPtables.*
-- **Game Programming**: *This course is teaching general techniques used by game programmers. It includes high level descriptions of various fields including Game Engine design, 3D modelling, mathematics used by game programmers, animation, collision detection, procedural generation, audio and lighting.*
-- **Compilers**: *This course provides a detailed view of the compilation process including: interpreters, overall design implementation of a compiler, techniques for parsing, building and manipulating intermediate representations of a program, implemenation of important features, code generation and optimization.*  
-
-- **Introduction to Intelligent Systems**:  *This course covers core topics of AI, namely: agents and enviornment, search, knowledge representation, reasoning and learning using logic as the common formalism for coherence*
 
 If you would like to see more of my work, just email [me](mailto:bunt.joshua@gmail.com).  
 
